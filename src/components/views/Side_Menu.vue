@@ -3,10 +3,8 @@
     <el-aside :width="asideWidth" style="min-height: 100vh;background: #00071D" >
       <div
         style="height:60px;color:white;display: flex;align-items:center;justify-content: center">
-        <img src="@/assets/logo1.jpg" width="40px">
-
+        <img src="@/assets/logo/logo1.jpg" width="40px">
         <span class="logo_title" v-show="!iscollapse" >菜单导航栏</span>
-
       </div>
       <el-menu style="border: none" :collapse="iscollapse" :collapse-transition="false" background-color="#00071D" text-color="#f6f6f6" active-text-color="#08d9d6" router :default-active="$route.path" >
         <el-menu-item index="/Welcome">
@@ -29,21 +27,6 @@
           <i class="el-icon-loan"></i>
           <span slot="title">借贷管理</span>
         </el-menu-item>
-
-<!--        <el-submenu >-->
-<!--          <template slot="title">-->
-<!--            <i class="el-icon-mobile-phone" ></i>-->
-<!--            <span>社区媒体</span>-->
-<!--          </template>-->
-<!--          <el-menu-item index="/f">-->
-<!--            <i class="el-icon-service"></i>-->
-<!--            <span>音乐</span>-->
-<!--          </el-menu-item>-->
-<!--          <el-menu-item index="/f">-->
-<!--            <i class="el-icon-film"></i>-->
-<!--            <span>视频</span>-->
-<!--          </el-menu-item>-->
-<!--        </el-submenu>-->
       </el-menu>
     </el-aside>
   </div>

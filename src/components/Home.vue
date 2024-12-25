@@ -23,7 +23,7 @@
             <el-dropdown placement="bottom">
               <div style="display: flex;align-items: center; cursor:default">
 
-                <img src="@/assets/logo2.png" style="width: 40px; ">
+                <img src="@/assets/logo/logo2.png" style="width: 40px; ">
                 <span>管理员</span>
               </div>
               <el-dropdown-menu slot="dropdown">
