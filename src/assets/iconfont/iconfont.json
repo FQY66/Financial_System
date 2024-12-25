@@ -1,0 +1,51 @@
+{
+  "id": "4779685",
+  "name": "前端作业",
+  "font_family": "element-icons",
+  "css_prefix_text": "el-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1056210",
+      "name": "借贷管理",
+      "font_class": "zjiedai",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "1373805",
+      "name": "收支管理",
+      "font_class": "shouzhiguanli",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "1604939",
+      "name": "账户管理",
+      "font_class": "weibiaoti5",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "1531456",
+      "name": "财务系统",
+      "font_class": "xitong",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "1727399",
+      "name": "43财务",
+      "font_class": "caiwu",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "5022484",
+      "name": "全屏",
+      "font_class": "quanping",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    }
+  ]
+}
