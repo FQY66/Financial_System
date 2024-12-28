@@ -8,11 +8,12 @@ export default {
       dialogVisible_adduser:false,
       dialogVisible_edituser:false,
       dialogVisible_deleteuser:false,
+      dialogVisible:false,
       idx:-1,
       newUser:{
         name:'',
-        address:'',
-        account:'',
+        pwd:'',
+        bank:'',
         user:'',
         finace:'',
       },
@@ -25,8 +26,8 @@ export default {
         this.dialogVisible_adduser=true;
         this.newUser = {
           name: '',
-          address: '',
-          account: '',
+          pwd: '',
+          bank: '',
           finace: '',
         }
       }
@@ -54,8 +55,8 @@ export default {
       this.dialogVisible_adduser = false;
       this.newUser = {
         name: '',
-        address: '',
-        account: '',
+        pwd: '',
+        bank: '',
         finace: '',
       };
     },
@@ -127,17 +128,17 @@ export default {
         <el-table-column type="index"></el-table-column>
         <el-table-column
           prop="name"
-          label="姓名"
+          label="账户"
           width="180">
         </el-table-column>
         <el-table-column
-          prop="address"
-          label="地址"
+          prop="pwd"
+          label="密码"
           width="330">
         </el-table-column>
         <el-table-column
-          prop="account"
-          label="账号"
+          prop="bank"
+          label="银行"
           width="310">
         </el-table-column>
         <el-table-column
@@ -153,36 +154,18 @@ export default {
             <el-tooltip content="删除用户" placement="top" :enterable="false">
               <el-button style="width: 80px"  type="danger" icon="el-icon-delete" @click="showForm('dialogVisible_deleteuser',scope.$index)"></el-button>
             </el-tooltip>
-            <el-dialog title="添加用户" :visible.sync="dialogVisible_adduser" @close="cancel">
-              <el-form>
-                <el-form-item label="姓名" required>
-                  <el-input v-model="newUser.name"></el-input>
-                </el-form-item>
-                <el-form-item label="地址" required>
-                  <el-input v-model="newUser.address"></el-input>
-                </el-form-item>
-                <el-form-item label="账号" required>
-                  <el-input v-model="newUser.account"></el-input>
-                </el-form-item>
-                <el-form-item label="余额" required>
-                  <el-input v-model="newUser.finace"></el-input>
-                </el-form-item>
-              </el-form>
-              <div slot="footer" class="dialog-footer">
-                <el-button @click="cancel">取 消</el-button>
-                <el-button type="primary" @click="saveNewUser">确 定</el-button>
-              </div>
+            <el-dialog >
             </el-dialog>
             <el-dialog title="编辑用户" :visible.sync="dialogVisible_edituser" @close="cancel">
               <el-form>
-                <el-form-item label="姓名" required>
+                <el-form-item label="账户" required>
                   <el-input v-model="newUser.name"></el-input>
                 </el-form-item>
-                <el-form-item label="地址" required>
-                  <el-input v-model="newUser.address"></el-input>
+                <el-form-item label="密码" required>
+                  <el-input v-model="newUser.pwd"></el-input>
                 </el-form-item>
-                <el-form-item label="账号" required>
-                  <el-input v-model="newUser.account"></el-input>
+                <el-form-item label="银行" required>
+                  <el-input v-model="newUser.bank"></el-input>
                 </el-form-item>
                 <el-form-item label="余额" required>
                   <el-input v-model="newUser.finace"></el-input>
@@ -203,10 +186,27 @@ export default {
           </template>
         </el-table-column>
       </el-table>
-
-
+      <el-dialog title="添加用户" :visible.sync="dialogVisible_adduser" @close="cancel">
+        <el-form>
+          <el-form-item label="账户" required>
+            <el-input v-model="newUser.name"></el-input>
+          </el-form-item>
+          <el-form-item label="密码" required>
+            <el-input v-model="newUser.pwd"></el-input>
+          </el-form-item>
+          <el-form-item label="银行" required>
+            <el-input v-model="newUser.bank"></el-input>
+          </el-form-item>
+          <el-form-item label="余额" required>
+            <el-input v-model="newUser.finace"></el-input>
+          </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="cancel">取 消</el-button>
+          <el-button type="primary" @click="saveNewUser">确 定</el-button>
+        </div>
+      </el-dialog>
     </el-card>
-
   </div>
 </template>
 

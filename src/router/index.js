@@ -6,6 +6,7 @@ import Welcome from "../components/views/Welcome.vue"
 import Finace from "../components/views/Finace.vue";
 import Income from "../components/views/Income.vue";
 import Loan from "../components/views/Loan.vue";
+import Login from "../components/views/Login.vue";
 
 Vue.use(Router)
 
@@ -13,12 +14,17 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Login',
+      component: Login,
+    },
+    {
+      path: '/Home',
       name: 'HomeMain',
       component: HomeMain,
       redirect: '/Welcome',
       children: [
         {
-          path: 'Welcome',
+          path: '/Welcome',
           component: Welcome
         },
         {
