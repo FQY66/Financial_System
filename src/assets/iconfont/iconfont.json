@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4421942",
+      "name": "信息",
+      "font_class": "xinxi",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "5085943",
+      "name": "付钱",
+      "font_class": "fuqian",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "27770344",
+      "name": "账户",
+      "font_class": "zhanghu",
+      "unicode": "e774",
+      "unicode_decimal": 59252
+    },
+    {
       "icon_id": "1056210",
       "name": "借贷管理",
       "font_class": "zjiedai",

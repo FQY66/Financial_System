@@ -1,8 +1,8 @@
 @font-face {
   font-family: "element-icons"; /* Project id 4779685 */
-  src: url('iconfont.woff2?t=1734417107349') format('woff2'),
-       url('iconfont.woff?t=1734417107349') format('woff'),
-       url('iconfont.ttf?t=1734417107349') format('truetype');
+  src: url('iconfont.woff2?t=1735459522543') format('woff2'),
+       url('iconfont.woff?t=1735459522543') format('woff'),
+       url('iconfont.ttf?t=1735459522543') format('truetype');
 }
 
 .element-icons {
@@ -13,15 +13,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.el-icon-loan:before {
+.el-icon-xinxi:before {
+  content: "\e673";
+}
+
+.el-icon-fuqian:before {
+  content: "\e637";
+}
+
+.el-icon-zhanghu:before {
+  content: "\e774";
+}
+
+.el-icon-zjiedai:before {
   content: "\e602";
 }
 
-.el-icon-income:before {
+.el-icon-shouzhiguanli:before {
   content: "\e677";
 }
 
-.el-icon-user:before {
+.el-icon-weibiaoti5:before {
   content: "\e63d";
 }
 
@@ -29,7 +41,7 @@
   content: "\e616";
 }
 
-.el-icon-finace:before {
+.el-icon-caiwu:before {
   content: "\e8ae";
 }
 

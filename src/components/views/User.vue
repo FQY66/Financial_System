@@ -5,17 +5,24 @@ export default {
     return {
       input: ' ',
       userdata: [],
+      incomedata:[],
       dialogVisible_adduser:false,
       dialogVisible_edituser:false,
       dialogVisible_deleteuser:false,
       dialogVisible:false,
       idx:-1,
       newUser:{
-        name:'',
+        user:'',
         pwd:'',
         bank:'',
-        user:'',
         finace:'',
+      },
+      newincome: {
+        name: '',
+        type: '',
+        money: '',
+        date: '',
+        user: '',
       },
     }
   },
@@ -25,7 +32,7 @@ export default {
         console.log("添加用户界面被调用")
         this.dialogVisible_adduser=true;
         this.newUser = {
-          name: '',
+          user: '',
           pwd: '',
           bank: '',
           finace: '',
@@ -54,7 +61,7 @@ export default {
       localStorage.setItem('userdata', JSON.stringify(this.userdata));
       this.dialogVisible_adduser = false;
       this.newUser = {
-        name: '',
+        user: '',
         pwd: '',
         bank: '',
         finace: '',
@@ -105,13 +112,38 @@ export default {
     if (localStorage.getItem('userdata')) {
       console.log("拿到userdata数据")
       this.userdata = JSON.parse(localStorage.getItem('userdata'));
+      if(localStorage.getItem('incomedata')){
+        console.log("拿到incomedata数据");
+        this.incomedata=JSON.parse(localStorage.getItem('incomedata'));
+        for(let i=0;i<this.userdata.length;i++){
+          let sum=0;
+          for(let j=0;j<this.incomedata.length;j++){
+            if(this.incomedata[j].user===this.userdata[i].user){
+              if("收入"===this.incomedata[j].type){
+                console.log("收入被调用");
+                sum+=Number(this.incomedata[j].money);
+              }
+              if("支出"===this.incomedata[j].type){
+                console.log("支出被调用");
+                sum-=Number(this.incomedata[j].money);
+              }
+            }
+          }
+          this.userdata[i].finace=sum.toString();
+        }
+        localStorage.setItem('userdata',JSON.stringify(this.userdata));
+      }
     }
   },
-
 }
 </script>
 <template>
   <div>
+    <el-row>
+     <div style=" display: flex; align-items: center; justify-content: center; height: 200px;">
+       <el-image src="static/userimg.png" style="height: 200px"></el-image>
+     </div>
+    </el-row>
     <el-card>
       <div slot="header">
         <el-row :gutter="220">
@@ -127,7 +159,7 @@ export default {
       <el-table :data="userdata" style="width: 100%" border>
         <el-table-column type="index"></el-table-column>
         <el-table-column
-          prop="name"
+          prop="user"
           label="账户"
           width="180">
         </el-table-column>
@@ -159,7 +191,7 @@ export default {
             <el-dialog title="编辑用户" :visible.sync="dialogVisible_edituser" @close="cancel">
               <el-form>
                 <el-form-item label="账户" required>
-                  <el-input v-model="newUser.name"></el-input>
+                  <el-input v-model="newUser.user"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" required>
                   <el-input v-model="newUser.pwd"></el-input>
@@ -189,7 +221,7 @@ export default {
       <el-dialog title="添加用户" :visible.sync="dialogVisible_adduser" @close="cancel">
         <el-form>
           <el-form-item label="账户" required>
-            <el-input v-model="newUser.name"></el-input>
+            <el-input v-model="newUser.user"></el-input>
           </el-form-item>
           <el-form-item label="密码" required>
             <el-input v-model="newUser.pwd"></el-input>
@@ -209,7 +241,6 @@ export default {
     </el-card>
   </div>
 </template>
-
 <style scoped>
 
 </style>

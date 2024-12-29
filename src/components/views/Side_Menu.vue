@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-aside :width="asideWidth" style="min-height: 100vh;background: #00071D" >
+    <el-aside :width="asideWidth" style="min-height: 100vh;height: 100%;background: #00071D" >
       <div
         style="height:60px;color:white;display: flex;align-items:center;justify-content: center">
         <img src="@/assets/logo/logo1.jpg" width="40px">
@@ -16,15 +16,15 @@
           <span slot="title">账户管理</span>
         </el-menu-item>
         <el-menu-item index="/Finace">
-          <i class="el-icon-finace"></i>
+          <i class="el-icon-caiwu"></i>
           <span slot="title">财务信息</span>
         </el-menu-item>
         <el-menu-item index="/Income">
-          <i class="el-icon-income"></i>
+          <i class="el-icon-shouzhiguanli"></i>
           <span slot="title">收支管理</span>
         </el-menu-item>
         <el-menu-item index="/Loan">
-          <i class="el-icon-loan"></i>
+          <i class="el-icon-zjiedai"></i>
           <span slot="title">借贷管理</span>
         </el-menu-item>
       </el-menu>
